@@ -25,6 +25,7 @@ git commit -m "Groupe 1 : réalisation de la tâche assignée"
 git push -u origin CIM-J-A
 ```
 # LAB 1
+[doc](https://registry.terraform.io/providers/hashicorp/aws/latest)
 ```mermaid
 flowchart TB
     G1["G1 — VPC<br/>10.0.0.0/16"]
