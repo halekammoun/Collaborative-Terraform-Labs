@@ -26,6 +26,11 @@ git push -u origin CIM-J-A
 ```
 # LAB 1
 [doc](https://registry.terraform.io/providers/hashicorp/aws/latest)
+Il faut distinguer trois notions dans le doc :
+- Inputs : les paramètres que tu peux choisir et transmettre au module.
+- Resources : les ressources AWS que le module peut créer en interne.
+- Outputs : les informations que le module te retourne après sa configuration, comme l'ID du VPC.
+
 ```mermaid
 flowchart TB
     Internet(("Internet"))
