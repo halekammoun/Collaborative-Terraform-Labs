@@ -19,3 +19,12 @@ resource "aws_vpc" "g1resource" {
     Name = "CIM-B-VPC"
   }
 }
+
+resource "aws_subnet" "grp2" {
+  vpc_id     = aws_vpc.g1resource.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "CIM-B-subnet"
+  }
+}
