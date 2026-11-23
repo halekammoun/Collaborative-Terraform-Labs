@@ -72,7 +72,7 @@ resource "aws_vpc_security_group_ingress_rule" "test-ssh" {
   cidr_ipv4   = "0.0.0.0/0"
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "test_ubuntu" {
   most_recent = true
 
   filter {
@@ -86,4 +86,16 @@ data "aws_ami" "ubuntu" {
   }
 
   owners = ["099720109477"] # Canonical
+}
+
+resource "aws_instance" "test_instance" {
+  ami           = data.aws_ami.test_ubuntu.id
+  instance_type = "t3.micro"
+  subnet_id   = aws_subnet.test_subnet.id
+  vpc_security_group_ids = [aws_security_group.test-sg.id]
+
+
+  tags = {
+    Name = "my_instance_C"
+  }
 }
