@@ -1,4 +1,3 @@
-
 resource "aws_vpc" "test_vpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
@@ -94,6 +93,9 @@ resource "aws_instance" "test_instance" {
   subnet_id   = aws_subnet.test_subnet.id
   vpc_security_group_ids = [aws_security_group.test-sg.id]
 
+  depends_on = [
+    aws_route_table_association.test_route_table
+  ]
 
   tags = {
     Name = "my_instance_C"
