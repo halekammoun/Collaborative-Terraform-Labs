@@ -14,3 +14,11 @@ resource "aws_subnet" "test_subnet" {
     name = "subnet-C"
   }
 }
+
+resource "aws_internet_gateway" "test_gw" {
+  vpc_id = aws_vpc.tes_vpc.id
+
+  tags = {
+    Name = "internet_gateway_C"
+  }
+}
