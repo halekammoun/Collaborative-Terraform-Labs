@@ -1,5 +1,5 @@
-# Travaux pratiques collaboratifs
-> Ces labs ont pour objectif de vous apprendre à naviguer dans la documentation officielle de Terraform, à identifier les ressources et les paramètres nécessaires, et à comprendre comment les utiliser. L’objectif n’est pas de concevoir une architecture AWS complète, fiable et prête pour la production, mais de développer votre autonomie dans l’utilisation de la documentation Terraform.
+# LAB collaboratif
+> Ce labs ont pour objectif de vous apprendre à naviguer dans la documentation officielle de Terraform, à identifier les ressources et les paramètres nécessaires, et à comprendre comment les utiliser. L’objectif n’est pas de concevoir une architecture AWS complète, fiable et prête pour la production, mais de développer votre autonomie dans l’utilisation de la documentation Terraform.
 
 ## À propos
 Ce dépôt regroupe des travaux pratiques collaboratifs dans lesquels les étudiants travaillent en groupes pour réaliser différentes tâches et construire ensemble une solution complète.
