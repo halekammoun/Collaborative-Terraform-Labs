@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "grp1profile"
 }
 
@@ -26,5 +26,13 @@ resource "aws_subnet" "grp2" {
 
   tags = {
     Name = "CIM-B-subnet"
+  }
+}
+
+resource "aws_internet_gateway" "grp3" {
+  vpc_id = aws_vpc.g1resource.id
+
+  tags = {
+    Name = "CIM-B-igw"
   }
 }
