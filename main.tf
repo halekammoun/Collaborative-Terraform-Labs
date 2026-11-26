@@ -55,3 +55,47 @@ resource "aws_route_table_association" "grp4" {
   subnet_id      = aws_subnet.grp2.id
   route_table_id = aws_route_table.grp4.id
 }
+
+resource "aws_security_group" "grp5" {
+  name        = "CIM-B-sg"
+  description = "Allow HTTP and SSH inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.g1resource.id
+
+  tags = {
+    Name = "CIM-B-sg"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
+  security_group_id = aws_security_group.grp5.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 80
+  ip_protocol       = "tcp"
+  to_port           = 80
+
+  tags = {
+    Name = "CIM-B-allow-http"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
+  security_group_id = aws_security_group.grp5.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 22
+  ip_protocol       = "tcp"
+  to_port           = 22
+
+  tags = {
+    Name = "CIM-B-allow-ssh"
+  }
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.grp5.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" 
+
+  tags = {
+    Name = "CIM-B-allow-all-egress"
+  }
+}
