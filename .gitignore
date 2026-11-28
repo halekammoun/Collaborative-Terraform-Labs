@@ -1,0 +1,33 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfplan
+tfplan
+
+# Variables locales (peuvent contenir des secrets)
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Overrides locaux
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config
+.terraformrc
+terraform.rc
+
+# Identifiants AWS — ne JAMAIS commiter
+.aws/
+credentials
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
